@@ -1,6 +1,6 @@
 services:
   rabbitmq:
-    image: rabbitmq:3.13-management-alpine
+    image: rabbitmq:4.3-management-alpine
     labels:
       - traefik.http.routers.rabbitmq.rule=Host(`rabbitmq.localhost`)
       - traefik.http.services.rabbitmq.loadbalancer.server.port=15672
