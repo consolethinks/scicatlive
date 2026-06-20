@@ -8,7 +8,7 @@ jobs:
   yaml-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install 'yamllint'
         run: sudo apt-get install -y yamllint
       - name: Lint YAML files
@@ -16,7 +16,7 @@ jobs:
   json-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install 'jsonlint' and 'git'
         run: sudo apt install python3-demjson git
       - name: Lint JSON files
@@ -25,7 +25,7 @@ jobs:
   shell-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install 'shellcheck' and 'git'
         run: sudo apt install shellcheck git
       - name: Lint shell files ([ba]sh scripts)
@@ -35,7 +35,7 @@ jobs:
   javascript-lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Use Node.js v20
         uses: actions/setup-node@v4
         with:
@@ -55,7 +55,7 @@ jobs:
       matrix:
         BE_VERSION: [v3, v4]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Test docker-compose.yaml
         run: |-
           export BE_VERSION=${{ matrix.BE_VERSION }}
